@@ -109,7 +109,7 @@ public class Graph {
      * @param b Vertex 2
      * @throws IndexOutOfBoundsException if a or b is invalid
      */
-    public final void addEdge(int a, int b) {
+    public void addEdge(int a, int b) {
         validateVertex(a);
         validateVertex(b);
         bag[a].add(b);
@@ -171,7 +171,7 @@ public class Graph {
      * @param v 
      * @throws IndexOutOfBoundsException if v is invalid
      */
-    private void validateVertex(int v) {
+    protected void validateVertex(int v) {
         if (v < 0 || v >= this.v) {
             throw new IndexOutOfBoundsException("vertex " + v + " is not between 0 and " + (v - 1));
         }
